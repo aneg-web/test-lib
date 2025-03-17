@@ -1,0 +1,19 @@
+<div class="library-details" *ngIf="library">
+  <div class="details-card">
+    <h2>Подробности</h2>
+
+    <div class="detail-row">
+      <span class="label">Название библиотеки:</span>
+      <span class="value">{{ library.FullName }}</span>
+    </div>
+
+    <div class="detail-row" *ngIf="library.Address">
+      <span class="label">Адрес:</span>
+      <span class="value">{{ library.Address }}</span>
+    </div>
+
+    <div class="button-container">
+      <button (click)="closeDetails()">Закрыть</button>
+    </div>
+  </div>
+</div>

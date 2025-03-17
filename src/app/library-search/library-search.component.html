@@ -1,0 +1,50 @@
+<div class="search-component">
+    <div class="search-overlay">
+      <h1>Поиск библиотек Москвы</h1>
+      
+      <div class="search-box">
+        <input 
+          type="text" 
+          [(ngModel)]="searchTerm" 
+          placeholder="Введите запрос"
+          (keyup.enter)="handleSearch()"
+        >
+        <button (click)="handleSearch()" [disabled]="loading">
+          {{ loading ? 'Поиск...' : 'Поиск библиотеки' }}
+        </button>
+      </div>
+  
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+  
+      <div *ngIf="libraries.length > 0" class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Название библиотеки</th>
+              <th>Адрес</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let library of libraries; let i = index; trackBy: trackByLibrary" (click)="selectLibrary(library)" class="clickable-row">
+              <td>{{ i + 1 }}</td>
+              <td [innerHTML]="highlightSearchTerm(library.FullName)"></td>
+              <td>{{ library.Address }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <app-library-detail 
+          *ngIf="selectedLibrary"
+          [library]="selectedLibrary"
+          (close)="closeLibraryDetails()">
+        </app-library-detail>
+      </div>
+      
+      <div *ngIf="libraries.length === 0 && !loading && !error" class="no-results">
+        Библиотеки не найдены.
+      </div>
+    </div>
+  </div>
+  

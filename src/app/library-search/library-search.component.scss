@@ -1,0 +1,101 @@
+.search-component {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background: url('/assets/beautiful-milky-way-night-sky.jpg') no-repeat center center;
+    position: relative;
+  }
+  
+  .search-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 40px;
+  }
+  
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  input {
+    padding: 10px 15px;
+    width: 300px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:disabled {
+    background-color: #88b1dd;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #ff6666;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .results-table {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .clickable-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .clickable-row:hover {
+    background-color: #f0f8ff;
+  }
+  
+  .highlight {
+    background-color: #ffff99;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .no-results {
+    text-align: center;
+    margin-top: 20px;
+  }

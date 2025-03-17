@@ -1,0 +1,4 @@
+<div class="container">
+  <app-library-search (librarySelected)="onLibrarySelected($event)"></app-library-search>
+  <app-library-detail *ngIf="selectedLibrary" [library]="selectedLibrary"></app-library-detail>
+</div>
